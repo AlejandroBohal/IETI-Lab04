@@ -16,8 +16,9 @@ export const Login = () => {
         const userFound = users.find((user) => userName === user.userName && password === user.password);
         const exampleUsersFound = exampleUsers.find((user) => userName === user.userName && password === user.password);
         if (userFound || exampleUsersFound) {
+            const user = exampleUsersFound || exampleUsersFound;
             localStorage.setItem("user", JSON.stringify(
-                { loggingStatus: "loggedIn", username: userName, password, email:userFound.email}
+                { loggingStatus: "loggedIn", username: userName, password, email: user.email}
             ));
             history.replace("/taskPlanner");
 

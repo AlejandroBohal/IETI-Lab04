@@ -6,18 +6,30 @@ import { Box } from '../Drawer/Box';
 import taskPlannerStyles from './taskPlannerStyles';
 import { TaskGrid } from './TaskGrid';
 import Fab from '@material-ui/core/Fab';
-import { useHistory,Redirect } from 'react-router-dom';
+import SearchIcon from '@material-ui/icons/Search';
+import { useHistory, Redirect } from 'react-router-dom';
+import { FilterModal } from './FilterModal';
+
 export const TaskPlannerApp = ({ tasks }) => {
+
+    
     const classes = taskPlannerStyles();
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
     const handleOpen = () => {
         setOpen(!open);
     }
-    const history = useHistory();
+    const handleOpenModal = () => {
+        setOpenModal(true);
+    }
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    }
 
+    const history = useHistory();
     if (!JSON.parse(localStorage.getItem("user")) || JSON.parse(localStorage.getItem("user")).loggingStatus !== "loggedIn") {
         return <Redirect to={{ pathname: '/' }} />
-    } 
+    }
     else {
         return (
             <div className={classes.container}>
@@ -49,6 +61,16 @@ export const TaskPlannerApp = ({ tasks }) => {
                     >
                         <AddIcon />
                     </Fab>
+                    <Fab
+                        size="medium"
+                        color="primary"
+                        aria-label="add"
+                        className={classes.buttonTop}
+                        onClick={handleOpenModal}
+                    >
+                        <SearchIcon />
+                    </Fab>
+                    <FilterModal open={openModal} handleClose={handleCloseModal}/>
                 </div>
 
 

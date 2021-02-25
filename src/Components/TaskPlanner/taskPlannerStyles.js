@@ -28,6 +28,12 @@ const taskPlannerStyles = makeStyles((theme) =>({
         bottom: "15px",
         right:"20px",
         margin: theme.spacing(1)
+    },
+    buttonTop:{
+        position: 'fixed',
+        top: "70px",
+        right:"20px",
+        margin: theme.spacing(1)
     }
 
 }));

@@ -11,7 +11,7 @@ export const Login = () => {
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory();
-    const users = JSON.parse(localStorage.getItem("users"));
+    const users = JSON.parse(localStorage.getItem("users")) || [];
     const login = () => {
         const userFound = users.find((user) => userName === user.userName && password === user.password);
         const exampleUsersFound = exampleUsers.find((user) => userName === user.userName && password === user.password);

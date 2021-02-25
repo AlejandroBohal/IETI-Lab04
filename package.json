@@ -23,7 +23,6 @@
     "react-scripts": "4.0.3",
     "serve": "^11.3.2",
     "sweetalert-react": "^0.4.11",
-    "sweetalert2": "^10.15.5",
     "web-vitals": "^1.1.0"
   },
   "scripts": {

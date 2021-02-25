@@ -13,7 +13,7 @@ export const UserProfile = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const users = JSON.parse(localStorage.getItem("users"));
+    const users = JSON.parse(localStorage.getItem("users")) || [];
     const history = useHistory();
     const setUsers = (users) =>{
         localStorage.setItem("users",JSON.stringify(users));

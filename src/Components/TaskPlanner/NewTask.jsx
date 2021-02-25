@@ -44,7 +44,7 @@ export const NewTask = ({ addTask }) => {
     const classe = loggingStyles();
     const classes = useStyles();
     const history = useHistory();
-    const users = JSON.parse(localStorage.getItem("users"));
+    const users = JSON.parse(localStorage.getItem("users")) || [];
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!description || !responsible || !status || !dueDate) {

@@ -11,6 +11,7 @@ import 'fontsource-roboto';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 export const UserInfo = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
     const classes = drawerStyles();
     const emptyAvatar = "https://media.discordapp.net/attachments/400395275673272342/815589574743031838/user.png?width=473&height=473";
     return (
@@ -20,8 +21,8 @@ export const UserInfo = () => {
                     <Avatar variant="square" className={classes.avatar} src={emptyAvatar}/>
                 </Grid>
                 <Grid item >
-                    <Typography variant="body2" color="primary" className={classes.header}>Juanor Mejia</Typography>
-                    <Typography variant="body2">jmejia@gmail.com</Typography>
+                    <Typography variant="body2" color="primary" className={classes.header}>{user.username}</Typography>
+                    <Typography variant="body2">{user.email}</Typography>
                 </Grid>
             </Grid>
             <Grid item className={classes.edit}>

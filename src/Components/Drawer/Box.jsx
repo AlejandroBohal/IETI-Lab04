@@ -8,12 +8,14 @@ import drawerStyles from './drawerStyles';
 import 'fontsource-roboto';
 import {UserInfo} from './UserInfo';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import {useHistory} from 'react-router-dom';
 
 export const Box = ({ variant, open, onClose = null}) => {
     const classes = drawerStyles();
+    const history = useHistory();
     const logOut = () =>{
         localStorage.removeItem('user');
-        window.location.href= "/";
+        history.push("/");
     }
     return (
         <Drawer

@@ -2,7 +2,7 @@
 const tasksList =
 [
     {
-        "description": "some description text ",
+        "description": "TO SUICIDE ",
         "responsible": {
             "name": "Santiago Carrillo",
             "email": "sancarbar@gmail"
@@ -11,7 +11,7 @@ const tasksList =
         "dueDate": new Date(156464645646)
     },
     {
-        "description": "some description text ",
+        "description": "TO SUICIDE ",
         "responsible": {
             "name": "Santiago Carrillo",
             "email": "sancarbar@gmail"
@@ -20,7 +20,7 @@ const tasksList =
         "dueDate": new Date(156464645646)
     },
     {
-        "description": "some description text ",
+        "description": "TO SUICIDE ",
         "responsible": {
             "name": "Santiago Carrillo",
             "email": "sancarbar@gmail"
@@ -29,7 +29,7 @@ const tasksList =
         "dueDate": new Date(156464645646)
     },
     {
-        "description": "some description text ",
+        "description": "TO SUICIDE XD ",
         "responsible": {
             "name": "Santiago Carrillo",
             "email": "sancarbar@gmail"

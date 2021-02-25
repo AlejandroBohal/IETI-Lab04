@@ -45,33 +45,33 @@ export const NewTask = ({ addTask }) => {
     const classes = useStyles();
     const history = useHistory();
     const users = JSON.parse(localStorage.getItem("users")) || [];
+    const canExecute = (responsible) => {
+        const user = users.find(user => user.userName === responsible);
+        const userExample = usersExample.find(user => user.userName === responsible);
+        if (!user && !userExample) {
+            alert("Responsible not registered.");
+        }
+        return user || userExample;
+    }
     const handleSubmit = (e) => {
         e.preventDefault();
+        const userFinded = canExecute(responsible); 
         if (!description || !responsible || !status || !dueDate) {
             alert("All fields are required")
-        } else if (canExecute(responsible)) {
+        } else if (userFinded) {
 
             const newTask = {
                 description,
                 responsible: {
                     name: responsible,
-                    email: users.find(user => user.userName === responsible).email
+                    email: userFinded.email
                 },
                 status,
                 dueDate
             }
-
             addTask(newTask);
             history.push("/taskPlanner");
         }
-    }
-    const canExecute = (responsible) => {
-        const user = users.find(user => user.userName === responsible);
-        const userExample = usersExample.find(user => user.userName === responsible);
-        if (!user && !userExample) {
-            alert("Responsible not registered.")
-        }
-        return user;
     }
     if (!JSON.parse(localStorage.getItem("user")) || JSON.parse(localStorage.getItem("user")).loggingStatus !== "loggedIn") {
         return <Redirect to={{ pathname: '/' }} />

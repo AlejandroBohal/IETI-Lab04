@@ -5,17 +5,17 @@ import loggingStyles from './loggingStyles';
 import exampleUsers from './exampleUsers';
 import 'fontsource-roboto';
 
-export const Login = ({history}) => {
+export const Login = () => {
     const classes = loggingStyles();
     const [userName, setUserName] = useState("");
     const [password,setPassword] = useState("");
     const login = () => {
-        const userFound = exampleUsers.find((user) => userName === user.userName && password === user.passWord);
+        const userFound = exampleUsers.find((user) => userName === user.userName && password === user.password);
         if (userFound){
             localStorage.setItem("user",JSON.stringify(
                 {loggingStatus:"loggedIn",username:userName,password}
             ))
-            window.location.href = "/taskPlanner"   
+            window.location.href= "/taskPlanner"
         }
         else{
             alert("Incorrect logging check your credentials")

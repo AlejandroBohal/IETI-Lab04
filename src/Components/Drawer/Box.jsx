@@ -9,11 +9,11 @@ import 'fontsource-roboto';
 import {UserInfo} from './UserInfo';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
-export const Box = ({ variant, open, onClose = null }) => {
+export const Box = ({ variant, open, onClose = null}) => {
     const classes = drawerStyles();
     const logOut = () =>{
         localStorage.removeItem('user');
-        window.location.href = "/";
+        window.location.href= "/";
     }
     return (
         <Drawer

@@ -22,7 +22,8 @@ const loggingStyles = makeStyles((theme) => ({
     text:{
         paddingTop: "1rem",
         fontSize: "16px"
-    }
+    },
+    
 }));
 
 export default loggingStyles;

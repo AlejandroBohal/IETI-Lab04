@@ -1,4 +1,6 @@
-const tasks = [
+
+const tasksList =
+[
     {
         "description": "some description text ",
         "responsible": {
@@ -6,7 +8,7 @@ const tasks = [
             "email": "sancarbar@gmail"
         },
         "status": "completed",
-        "dueDate": 156464645646
+        "dueDate": new Date(156464645646)
     },
     {
         "description": "some description text ",
@@ -15,7 +17,7 @@ const tasks = [
             "email": "sancarbar@gmail"
         },
         "status": "ready",
-        "dueDate": 156464645646
+        "dueDate": new Date(156464645646)
     },
     {
         "description": "some description text ",
@@ -24,7 +26,7 @@ const tasks = [
             "email": "sancarbar@gmail"
         },
         "status": "in progress",
-        "dueDate": 156464645646
+        "dueDate": new Date(156464645646)
     },
     {
         "description": "some description text ",
@@ -33,8 +35,7 @@ const tasks = [
             "email": "sancarbar@gmail"
         },
         "status": "completed",
-        "dueDate": 156464645646
+        "dueDate": new Date(156464645646)
     }
-
 ]
-export default tasks;
+export default tasksList;

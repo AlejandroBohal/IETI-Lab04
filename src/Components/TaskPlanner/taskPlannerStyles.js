@@ -21,7 +21,13 @@ const taskPlannerStyles = makeStyles((theme) =>({
     content: {
         flexGrow: 1,
         backgroudColor: theme.palette.background.default,
-        padding: theme.spacing(1)
+        padding: theme.spacing(1),
+    },
+    button:{
+        position: 'fixed',
+        bottom: "15px",
+        right:"20px",
+        margin: theme.spacing(1)
     }
 
 }));

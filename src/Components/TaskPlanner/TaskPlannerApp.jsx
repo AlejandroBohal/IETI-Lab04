@@ -16,6 +16,7 @@ export const TaskPlannerApp = ({ tasks }) => {
     const classes = taskPlannerStyles();
     const [open, setOpen] = useState(false);
     const [openModal, setOpenModal] = useState(false);
+    const [filteredTasks, setFilteredTasks] = useState(tasks);
     const handleOpen = () => {
         setOpen(!open);
     }
@@ -51,7 +52,7 @@ export const TaskPlannerApp = ({ tasks }) => {
                 </Hidden>
                 <div className={classes.content}>
                     <div className={classes.toolbar}></div>
-                    <TaskGrid tasks={tasks} />
+                    <TaskGrid tasks={filteredTasks} />
                     <Fab
                         size="medium"
                         color="primary"
@@ -70,7 +71,7 @@ export const TaskPlannerApp = ({ tasks }) => {
                     >
                         <SearchIcon />
                     </Fab>
-                    <FilterModal open={openModal} handleClose={handleCloseModal}/>
+                    <FilterModal open={openModal} handleClose={handleCloseModal} tasks={tasks} setTasks={setFilteredTasks}/>
                 </div>
 
 
